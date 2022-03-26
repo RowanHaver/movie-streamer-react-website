@@ -1,9 +1,25 @@
 .main-screen{
     display: flex;
     align-items: center;
+    height: 90vh;
     justify-content: center;
 }
 
 .signin-box{
-    
+    width: 600px;
+    height: 500px;
+    background-color: #3062E3;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.signin-title{
+    padding-top: 30px;
+    padding-left: 40px;
+    color: white;
+}
+
+.signin-form{
+    display: flex;
+    flex-direction: column;
 }
