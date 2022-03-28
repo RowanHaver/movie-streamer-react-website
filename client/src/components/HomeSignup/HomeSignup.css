@@ -1,0 +1,25 @@
+.main-screen{
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    justify-content: center;
+}
+
+.signup-box{
+    width: 600px;
+    height: 500px;
+    background-color: #3062E3;
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.signup-title{
+    padding-top: 30px;
+    padding-left: 40px;
+    color: white;
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+}

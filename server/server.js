@@ -1,13 +1,16 @@
 require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 const db = require("./db");
+
 const app = express();
 
 let emailRegex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 let passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
 
 //middleware 
+app.use(cors());
 app.use(express.json()); //takes information from the body of the request and attaches it to the request object under the name body
 
 //app.use(morgan("tiny"));
@@ -16,7 +19,7 @@ app.use(express.json()); //takes information from the body of the request and at
 const port = process.env.PORT || 3001;
 
 //get all - route handler
-app.get("/api/v1/tester", async (req, res) => {
+app.get("/api/v1/tester", async (req, res) => { 
     try{
         const results = await db.query("select * from restaurants");
         console.log(results);
@@ -111,7 +114,7 @@ app.delete("/api/v1/tester/:id", async (req, res) => {
 });
 
 //login
-app.post("/login", async (req, res) => {
+app.post("/login", async (req, res) => { 
     try{
         const results = await db.query(
             "select * from customer where email = $1 AND password = $2", [req.body.email, req.body.password]
