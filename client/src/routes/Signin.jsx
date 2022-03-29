@@ -4,6 +4,7 @@ import HomeSignin from "../components/HomeSignIn/HomeSignIn";
 
 const Signin = () => {
     return <div>
+        <HomeNavigation></HomeNavigation>
         <HomeSignin></HomeSignin>
     </div>;
 };

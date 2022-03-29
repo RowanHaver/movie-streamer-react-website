@@ -41,9 +41,12 @@ export default HomeSignin;
 import React, { useState } from 'react';
 import CustomerFinder from '../../apis/CustomerFinder';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from "react-cookie";
 import './HomeSignIn.css';
 
 const HomeSignin = () => {
+
+
     let navigate = useNavigate();
 
     const [email, setEmail] = useState("")
@@ -58,13 +61,24 @@ const HomeSignin = () => {
             })
             console.log(response.data.status);
             if(response.data.status === "success"){
-                
-                navigate("/home");
+                handleCookie(response.data);
+                navigate("/dashboard");
             }
         } catch(err){
 
         }
     }
+    //hook
+    const [cookies, setCookie] = useCookies(["user"]);
+
+    //sets the cookie
+    const handleCookie = (data) =>{
+        setCookie("user", data.userID, {
+            path:"/"
+        });
+    }
+
+
     return (
         <div >
             <div className='main-screen'>

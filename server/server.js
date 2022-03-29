@@ -128,7 +128,8 @@ app.post("/login", async (req, res) => {
         } else{
             //console.log(results);
             res.status(200).json({
-                status: "success"
+                status: "success",
+                userID: results.rows[0].id
             });
         }
     } catch(err) {

@@ -5,18 +5,17 @@ import Signin from "./routes/Signin";
 import Signup from "./routes/Signup";
 import Dashboard from "./routes/Dashboard";
 import PrivateRoute from "./routes/PrivateRoute";
-import HomeNavigation from "./components/HomeNavigation/HomeNavigation";
+//import HomeNavigation from "./components/HomeNavigation/HomeNavigation";
 
 
 const App = () => {
     return (<div>
         <Router>
-            <HomeNavigation></HomeNavigation>
             <Routes>
                 <Route exact path="/" element={<Home/>} />
                 <Route exact path="/signin" element={<Signin/>} />
                 <Route exact path="/signup" element={<Signup/>} />  
-                <Route element={<PrivateRoute isLogged={false} />}>
+                <Route element={<PrivateRoute /*isLogged={false}*/ />}>
                     <Route exact path="/dashboard" element={<Dashboard/>}/>
                 </Route>
             </Routes>
