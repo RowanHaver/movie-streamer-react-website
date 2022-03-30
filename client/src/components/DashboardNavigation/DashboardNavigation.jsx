@@ -1,37 +1,50 @@
 import React from 'react';
-import { MdMovie } from "react-icons/md";
+import { MdSearch, MdMovie, MdPerson } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-import './HomeNavigation.css';
-
+import './DashboardNavigation.css';
 
 const HomeNavigation = () => {
     let navigate = useNavigate();
 
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className='navbar-title'>
-                    <MdMovie size='1.8em' className='movie-icon'/>
-                    <a className="navbar-brand navbar-title-name" href="#">Streamzer</a>
-                </div>
+        <nav className="navbar navbar-expand-lg navbar-dark navbar-default">
 
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item ">
-                            <a className="nav-link cursor" onClick={() =>{
-                                navigate("/");
-                            }} >Home <span className="sr-only">(current)</span></a>
+            <div className="container-fluid">
+
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <div className='navbar-title'>
+                        <MdMovie size='1.8em' className='movie-icon text-light'/>
+                        <a className="navbar-brand navbar-title-name" href="#">Streamzer</a>
+                    </div> 
+
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Home</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Movies</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">TV shows</a>
                         </li>
                     </ul>
                 </div>
-                <button className="btn btn-outline-secondary login-button my-2 my-sm-0" onClick={() =>{
-                                navigate("/signin");
-                            }} type="submit">Sign in</button>
-            </nav>
-        </div>
+
+                <div className="d-flex align-items-center">
+
+                    <a className="text-reset me-3" href="#">
+                        <MdSearch size='1.8em' className='movie-icon text-light'/>
+                    </a>
+
+                    <a className="text-reset me-3 " href="#">
+                        <MdPerson size='1.8em' className='movie-icon text-light'/>
+                    </a>       
+                </div>
+            </div>
+        </nav>
+
+
     )
 }
 

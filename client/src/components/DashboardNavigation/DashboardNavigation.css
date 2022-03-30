@@ -1,0 +1,9 @@
+/* navbar */
+.navbar-default {
+    background-color: transparent;
+    border-color: black;
+}
+
+.navbar{
+    z-index: 1;
+}
