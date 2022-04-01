@@ -3,7 +3,7 @@ import { MdSearch, MdMovie, MdPerson } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import './DashboardNavigation.css';
 
-const HomeNavigation = () => {
+const HomeNavigation = (props) => {
     let navigate = useNavigate();
 
     return (
@@ -34,6 +34,9 @@ const HomeNavigation = () => {
                 <div className="d-flex align-items-center">
 
                     <a className="text-reset me-3" href="#">
+                        <input value={props.props.value} onChange={(event) => 
+                            props.props.setSearchValue(event.target.value)
+                        } type="text" placeholder='search' name="" id="" />
                         <MdSearch size='1.8em' className='movie-icon text-light'/>
                     </a>
 

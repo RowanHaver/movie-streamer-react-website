@@ -1,0 +1,16 @@
+/* all the rows within the movie app class*/
+.movie-app > .row{
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.padding{
+    padding-right:0;
+    padding-left:0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.poster-image{
+    width: 200px;
+}

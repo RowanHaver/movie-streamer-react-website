@@ -13,12 +13,12 @@ import godfather from '../../img/The-Godfather-image2.jpg';
 import wardogs from '../../img/WarDogs-Image.jpg';
 
 
-const ImageSlider = () => {
+const ImageSlider = (props) => {
     let navigate = useNavigate();
 
     return (
         <div>
-            <DashboardNavigation/>
+            <DashboardNavigation props={props}/>
             <Carousel className='slider' controls={false} indicators={false}>
                     <Carousel.Item>
                         <img src={babydriver} height="600px" object-fit="cover" width="100%" alt="" />

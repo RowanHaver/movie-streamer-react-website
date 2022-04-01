@@ -7,3 +7,11 @@
 .navbar{
     z-index: 1;
 }
+
+input[type="text"]
+{
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+
+}
